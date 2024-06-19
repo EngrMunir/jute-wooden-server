@@ -45,6 +45,13 @@ async function run() {
       res.send(crafts);
     })
 
+    app.post('/craft', async(req, res) =>{
+        const craft = req.body;
+        const result = await craftCollection.insertOne(craft);
+        res.send(result);
+      })
+  
+
 
     
     // Send a ping to confirm a successful connection
